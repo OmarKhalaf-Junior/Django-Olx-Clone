@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %} Delete Listing {% endblock title %}
+
+{% block content %}
+
+<h2> Are you sure you wanna delete {{listing.title}}?! </h2>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input class="btn btn-success" type="submit" value="Delete" />
+</form>
+
+{% endblock content %}
